@@ -1,4 +1,14 @@
 OnlineJudge::Application.routes.draw do
+  get "notices/index"
+
+  get "notices/new"
+
+  get "notices/show"
+
+  get "notices/edit"
+
+  root :to => 'notices#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -47,7 +57,7 @@ OnlineJudge::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
+  # just remember to delete public/main.html.
   # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
