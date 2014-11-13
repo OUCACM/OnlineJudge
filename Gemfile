@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 gem 'rails', '3.2.19'
 
@@ -23,6 +23,9 @@ end
 gem 'jquery-rails'
 
 gem 'bootstrap-sass'
+
+gem "will_paginate"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

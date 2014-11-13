@@ -1,11 +1,15 @@
 OnlineJudge::Application.routes.draw do
+  get "users/index"
+
   get "notices/index"
 
   get "notices/new"
 
-  get "notices/show"
+  get "notices/:id" => 'notices#show'
 
   get "notices/edit"
+
+  post "notices/new" => 'notices#create'
 
   root :to => 'notices#index'
 
