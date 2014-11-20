@@ -1,4 +1,26 @@
 OnlineJudge::Application.routes.draw do
+  get "home/index"
+
+  get "contests/index"
+
+  get "contests/show"
+
+  get "contests/new"
+
+  get "runs/index"
+
+  get "runs/show"
+
+  get "problems/index"
+
+  get "problems/show"
+
+  get "problems/new"
+
+  get "login" => "sessions#login"
+
+  get "register" => "sessions#register"
+
   get "users/index"
 
   get "notices/index"
@@ -11,7 +33,7 @@ OnlineJudge::Application.routes.draw do
 
   post "notices/new" => 'notices#create'
 
-  root :to => 'notices#index'
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

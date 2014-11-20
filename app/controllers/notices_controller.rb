@@ -12,7 +12,6 @@ class NoticesController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -33,6 +32,8 @@ class NoticesController < ApplicationController
   def edit
   end
 
-  private
+  def update
+
+  end
 
 end

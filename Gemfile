@@ -22,10 +22,16 @@ end
 
 gem 'jquery-rails'
 
+#bootstrap
 gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate'
 
+#分页
 gem "will_paginate"
 
+#用户
+gem 'devise', '~> 3.4.0'
+gem 'devise-encryptable', '0.1.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,23 +1,29 @@
 <div class="digg_pagination">
-  <div clas="page_info">
-    <%= page_entries_info @notices %>
-  </div>
-  </br>
   <div class="row">
     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+      <div clas="page_info">
+        <%= page_entries_info @notices %>
+      </div>
+      </br>
       <% @notices.each do |notice| %>
           <div class="panel panel-default">
             <div class="panel-body">
-              <h1><%= notice.title %></h1>
-
-              <p><%= notice.content %></p>
+              <div class="blog-post">
+                <h2 class="blog-post-title"><%= notice.title %></h2>
+                <p class="blog-post-meta"><%= notice.updated_at %> by <a href="#"><%= (User.find notice.author).name %></a></p>
+                <%= notice.content %>
+              </div>
             </div>
           </div>
       <% end %>
+      <div class="row">
+        <div class="center">
+          <ul class="pagination">
+            <%= will_paginate @notices %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<ul class="pagination">
-  <%= will_paginate @notices%>
-</ul>
