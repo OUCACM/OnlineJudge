@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :motto, :name, :password, :solved, :submit, :type
+  attr_accessible :admin, :email, :motto, :name, :password, :solved, :submit
 end
