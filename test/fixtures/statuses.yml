@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  problem_id: 1
+  author: 1
+  submit_time: 2014-12-04 09:55:18
+  exe_time: 1
+  exe_memory: 1
+  code_len: 1
+  language: 1
+  result: 1
+
+two:
+  problem_id: 1
+  author: 1
+  submit_time: 2014-12-04 09:55:18
+  exe_time: 1
+  exe_memory: 1
+  code_len: 1
+  language: 1
+  result: 1

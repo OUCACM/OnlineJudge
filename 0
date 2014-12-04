@@ -1,0 +1,6 @@
+      invoke  active_record
+      create    db/migrate/20141204021851_create_problems.rb
+      create    app/models/problem.rb
+      invoke    test_unit
+      create      test/unit/problem_test.rb
+      create      test/fixtures/problems.yml

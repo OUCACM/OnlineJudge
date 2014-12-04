@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141113012808) do
+ActiveRecord::Schema.define(:version => 20141204021851) do
 
   create_table "notices", :force => true do |t|
     t.string   "title"
@@ -21,13 +21,43 @@ ActiveRecord::Schema.define(:version => 20141113012808) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "problems", :force => true do |t|
+    t.string   "title",                            :null => false
+    t.integer  "time_limit",    :default => 1000
+    t.integer  "memory_limit",  :default => 65536
+    t.text     "description"
+    t.text     "input"
+    t.text     "output"
+    t.text     "sample_input"
+    t.text     "sample_output"
+    t.text     "hint"
+    t.text     "source"
+    t.integer  "contest",       :default => 0
+    t.boolean  "special",       :default => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.integer  "problem_id"
+    t.integer  "author"
+    t.datetime "submit_time"
+    t.integer  "exe_time"
+    t.integer  "exe_memory"
+    t.integer  "code_len"
+    t.integer  "language"
+    t.integer  "result"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "password"
     t.string   "email"
-    t.integer  "type"
+    t.integer  "admin"
     t.integer  "solved"
-    t.integer  "submit"
+    t.integer  "submitted"
     t.text     "motto"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

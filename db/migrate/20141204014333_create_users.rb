@@ -4,9 +4,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :password
       t.string :email
-      t.integer :type
+      t.integer :admin
       t.integer :solved
-      t.integer :submit
+      t.integer :submitted
       t.text :motto
 
       t.timestamps
