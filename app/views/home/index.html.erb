@@ -4,15 +4,11 @@
       <div class="panel-heading">Notice</div>
       <div class="panel-body">
         <div class="blog-main">
-          <% @notices.each do |notice| %>
-              <div class="blog-post">
-                <h2 class="blog-post-title"><%= notice.title %></h2>
 
-                <p class="blog-post-meta"><%= notice.updated_at %> by
-                  <a href="#"><!--%= (User.find notice.author).name %--></a></p>
-                <%= notice.content %>
-              </div>
+          <% @notices.each do |notice| %>
+              <%= render partial: "notices/index",  locals: { notice: notice } %>
           <% end %>
+
           <div class="row">
             <div class="center">
               <ul class="pagination">

@@ -6,17 +6,7 @@
       </div>
       </br>
       <% @notices.each do |notice| %>
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="blog-post">
-                <h2 class="blog-post-title"><%= notice.title %></h2>
-
-                <p class="blog-post-meta"><%= notice.updated_at %> by
-                  <a href="#"><!--%= (User.find notice.author).name %--></a></p>
-                <%= notice.content %>
-              </div>
-            </div>
-          </div>
+          <%= render partial: "index",  locals: { notice: notice } %>
       <% end %>
       <div class="row">
         <div class="center">

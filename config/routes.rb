@@ -19,6 +19,7 @@ OnlineJudge::Application.routes.draw do
 
   resources :notices
 
+
   get "login" => "sessions#login"
 
   get "logout" => "sessions#logout"
