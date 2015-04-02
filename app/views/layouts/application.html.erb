@@ -9,9 +9,13 @@
 <body>
 <%= render 'layouts/header' %>
 
+
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="container content-body">
+        <% if logined? %>
+            <p class="text-left text-primary text" style="font-size: 16px">Welcome, <%= current_user.name %></p>
+        <% end %>
       <%= yield %>
     </div>
   </div>

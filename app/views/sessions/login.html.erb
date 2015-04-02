@@ -1,2 +1,31 @@
-<h1>Sessions#login</h1>
-<p>Find me in app/views/sessions/login.html.erb</p>
+<h1>Sign In</h1>
+
+<% if logined? == false %>
+<div >
+  <%= form_tag sessions_path ,:remote => true , :class => "form-horizontal" do |f| %>
+
+    <div class="form-group">
+      <%= label_tag :login , "Username or Email" %>
+      <%= text_field_tag :login , '', :autofocus => "autofocus" %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :password , "Password" %>
+      <%= password_field_tag :password , '' %>
+    </div>
+
+    <div class="form-group">
+      <%= check_box_tag :remember_me , nil ,false %>
+      <%= label_tag :remember_me , "Remember me" %>
+    </div>
+
+      <p>
+        <%= submit_tag "Login" ,:class => "btn btn-primary" %>
+      </p>
+
+  <% end %>
+
+</div>
+    <% else %>
+    <h2> Welcome <%= current_user.name %> </h2>
+<% end %>
