@@ -1,39 +1,28 @@
 OnlineJudge::Application.routes.draw do
+
+  root :to => 'home#index'
+
   get "home/index"
+  get "index" => "home#index"
 
-  get "contests/index"
+  resources :contests , :only => [:index, :show ,:new]
 
-  get "contests/show"
+  resources :runs , :only => [:index , :show ]
 
-  get "contests/new"
+  resources :problems , :only => [:index ,:show ,:new]
 
-  get "runs/index"
+  resources :users , :only => [:index ] do
+    collection do
+      get :register
+    end
+  end
 
-  get "runs/show"
-
-  get "problems/index"
-
-  get "problems/show"
-
-  get "problems/new"
+  resources :notices
 
   get "login" => "sessions#login"
 
-  get "register" => "sessions#register"
+  get "logout" => "sessions#logout"
 
-  get "users/index"
-
-  get "notices/index"
-
-  get "notices/new"
-
-  get "notices/:id" => 'notices#show'
-
-  get "notices/edit"
-
-  post "notices/new" => 'notices#create'
-
-  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
