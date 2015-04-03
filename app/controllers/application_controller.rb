@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   helper_method :logined?, :current_user, :append_title, :page_title
 
   protected
-
   def set_base_title
     append_title APP_CONFIG['site_name']
   end
@@ -103,7 +102,7 @@ class ApplicationController < ActionController::Base
   end
 
   def store_location(path = nil)
-    session[:return_to] = path || request.fullpath
+    session[:return_to] = path || root_url
   end
 
   def redirect_back_or_default(default)

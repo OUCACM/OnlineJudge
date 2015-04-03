@@ -6,6 +6,10 @@ OnlineJudge::Application.routes.draw do
   get "index" => "home#index" ,:as => :index
   get 'register' => 'users#register' , :as =>:register
 
+  get "login" => "sessions#login" ,:as => :login
+
+  get "logout" => "sessions#logout" ,:as => :logout
+
   resources :contests , :only => [:index, :show ,:new]
 
   resources :runs , :only => [:index , :show ]
@@ -17,10 +21,6 @@ OnlineJudge::Application.routes.draw do
   resources :notices
 
   resource :sessions , :only => [:create]
-
-  get "login" => "sessions#login" ,:as => :login
-
-  get "logout" => "sessions#logout" ,:as => :logout
 
 
   # The priority is based upon order of creation:

@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
+
   def login
-    #store_location request.referrer if request.referrer.present?
-    store_location
+    store_location request.referrer if request.referrer.present?
   end
 
   def create
@@ -12,15 +12,12 @@ class SessionsController < ApplicationController
            else
              User.where(:name => @login.downcase).first
            end
-    puts @user.name
 
     if @user and @user.password == params[:password]
       login_as @user
       remember_me if params[:remember_me]
-
-      render :json=> { success: true }
     end
-    #redirect_to root_url
+    redirect_to root_path
   end
 
   def logout
